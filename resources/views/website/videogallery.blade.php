@@ -2,7 +2,7 @@
 
 @section('content')
      <!-- Breadcrumb area Start -->
-     <section class="page-title-area bg-image ptb--80" data-bg-image="website/images/page-bg.jpg">
+     <section class="page-title-area bg-image ptb--80" data-bg-image="/website/images/page-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">

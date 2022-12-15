@@ -67,7 +67,7 @@ class ContactController extends Controller
     public function ContactStore(Request $req){
         $validated = $req->validate([
             'first_name' => 'required',
-            'number' => 'required', 
+            // 'number' => 'required', 
          ]);
 
          if($req->file('file')){

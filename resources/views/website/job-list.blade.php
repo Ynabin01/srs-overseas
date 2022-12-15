@@ -55,7 +55,7 @@
                                                             <li>Posted On: {{ $job->getJob->deadline }}</li>
                                                             <li class="deadline">{{ $job->getJob->posted_on }}</li>
                                                         </ul>
-                                                        <a href="/jobdetails" class="btn btn-shape-round">View & Apply</a>
+                                                        <a href="/job_detail_single_page" class="btn btn-shape-round">View & Apply</a>
                                                     </div>
                                                 </div>
                                             </div>

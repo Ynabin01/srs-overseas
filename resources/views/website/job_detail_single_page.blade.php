@@ -16,7 +16,7 @@
                     <h1 class="page-title">Security Guard – UAE Job Demand </h1>
                     <ul class="breadcrumb">
                         <li><a href="/">Home</a></li>
-                        <li><a href="joblist">Job</a></li>
+                        <li><a href="/job-list">Job</a></li>
                         <li class="current"><span>Security Guard – UAE Job Demand </span></li>
                     </ul>
                 </div>
@@ -135,7 +135,7 @@
                                                             <p>({{ $all_jobsitem->getJob->company_name }})</p>
                                                         </div>
                                                         <div class="job-footer">
-                                                            <a href="#" class="btn btn-shape-round">View &amp;
+                                                            <a href="/job_detail_single_page"  class="btn btn-shape-round">View &amp;
                                                                 Apply</a>
                                                         </div>
                                                     </div>
@@ -157,10 +157,22 @@
     <!-- Popup Form Start-->
     <div class="form-popup-bg">
         <div class="form-container">
-            <button id="btnCloseForm" class="close-button fa fa-times-circle"></button>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+            <button id="btnCloseForm" class="close-button fa fa-times-circle" ></button>
             <h4>Application Form</h4>
-            <p class="job-title">Security Guard – UAE Job Demand</p>
-            <form method="" action="">
+            <p class="job-title">{{ $job->caption }}</p>
+
+            <form method="post" action="{{ route('contactstore') }}" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="first_name">Full Name</label>
                     <input name="first_name" type="text" class="form-control" />
@@ -181,7 +193,7 @@
                     <label for="file">Upload your CV</label>
                     <input name="file" type="file" class="form-control file-upload">
                 </div>
-                <button>Submit</button>
+                <button type="submit"> Submit</button>
             </form>
         </div>
     </div>
