@@ -9,7 +9,7 @@
                 <p class="mb--25 text-center">
                     {{$about->short_content ?? ''}}
                 </p>
-                <a href="inner" class="btn">Read More</a>
+                <a href="/about-one" class="btn">Read More</a>
             </div>
         </div>
     </div>
