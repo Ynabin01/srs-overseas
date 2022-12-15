@@ -115,7 +115,7 @@ class HomeController extends Controller
 
     public function category($menu){
 
-
+        
         // return $menu." this is category";
         $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
         //return $menus->first()->submenus;
@@ -165,6 +165,7 @@ class HomeController extends Controller
             $process = null;
         }
         //return $misson;
+        
         $job_categories = Navigation::all()->where('nav_category','Main')->where('page_type','Group')->where('banner_image','!=',null);
         //sreturn $job_categories;
         $global_setting = GlobalSetting::all()->first();        
@@ -193,7 +194,7 @@ class HomeController extends Controller
             $category_type = null;
         }
    
-        // return $category_type;
+    
 
         if($category_type == "Photo Gallery"){
             //return "return to page gallary";
@@ -218,6 +219,7 @@ class HomeController extends Controller
             $normal = Navigation::find($category_id);
             return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1]);
         }
+       
         elseif($category_type == "Group Jobs"){
         
             // return $category_id;
@@ -271,13 +273,8 @@ class HomeController extends Controller
         else{
             $missons = null;
         }
-        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()!=null){
-            $message_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()->id;
-            $message = Navigation::query()->where('parent_page_id',$message_id)->latest()->first();
-        }
-        else{
-            $message = null;
-        }
+       
+        
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%process%")->where('page_type','Group')->latest()->first()!=null){
             $process_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%process%")->where('page_type','Group')->latest()->first()->id;
             $process = Navigation::query()->where('parent_page_id',$process_id)->latest()->get();
@@ -297,6 +294,7 @@ class HomeController extends Controller
         else{
             $jobs = null;
         }
+    
         $slug_detail = Navigation::all()->where('nav_name',$submenu);
         $slug1 = Navigation::where('nav_name',$slug1)->first();
         $slug2 = Navigation::where('nav_name',$submenu)->first();
@@ -377,6 +375,14 @@ class HomeController extends Controller
             $normal = Navigation::find($subcategory_id);
             return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
+        elseif($subcategory_type == "Message"){
+                
+            $normal = Navigation::find($subcategory_id);
+            // return $normal;
+            return view("website.messagechairman")->with(['message'=>$message,'normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
+        }
+
+       
         elseif($subcategory_type == "Group"){
             //return "return to job else";
             return view("website.job-list")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);

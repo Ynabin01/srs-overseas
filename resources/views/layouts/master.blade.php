@@ -114,17 +114,26 @@
                                             <nav class="main-navigation text-center d-none d-lg-block">
                                                 @foreach ($menus as $menu)
                                                     <li class="mainmenu__item menu-item-has-children">
-                                                        <a href="/{{ $menu->nav_name }}" class="mainmenu__link">
-                                                            <span data-hover="About Us"
-                                                                class="mm-text">{{ $menu->caption }}</span>
-                                                        </a>
+                                                        {{-- @if ($menu->nav_name == 'aboutus' || $menu->nav_name == 'jobs'(for nabin understand)) --}} 
+                                                        @if ($menu->nav_name == 'aboutus' )
+                                                            <a href="#"
+                                                                class="mainmenu__link">{{ $menu->caption }}</a>
+                                                        @else
+                                                            <a href="/{{ $menu->nav_name }}" class="mainmenu__link">
+                                                                <span data-hover="About Us"
+                                                                    class="mm-text">{{ $menu->caption }}</span>
+                                                            </a>
+                                                        @endif
+
+
+
                                                         @if ($menu->childs->count() > 0)
                                                             <ul class="sub-menu">
                                                                 @foreach ($menu->childs as $submenu)
                                                                     <li>
                                                                         <a
                                                                             href="/{{ $menu->nav_name }}/{{ $submenu->nav_name }}">
-                                                                            <span data-hover="About Company"
+                                                                            <span data-hover="About Us"
                                                                                 class="mm-text">{{ $submenu->caption }}</span>
                                                                         </a>
                                                                     </li>
