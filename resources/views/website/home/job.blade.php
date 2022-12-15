@@ -50,7 +50,8 @@
                     </div>
                 @endforeach
             @endif
-            <a href="/job" class="btn">View All</a>
         </div>
     </div>
+    <a style="display: flex" href="/jobs" class="btn">View All</a>
+
 </section>
