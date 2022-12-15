@@ -17,11 +17,11 @@
             </div>
         </section>
         <!-- Breadcrumb area End -->
-
+      
         <!-- Main Content Wrapper Start -->
         <main class="main-content-wrapper">
             <!-- About Area Start -->
-            <section class="about-area ptb--60">
+            {{-- <section class="about-area ptb--60">
                 <div class="container">
                     <div class="heading mb--22">
                         <h2>@php echo $normal->short_content; @endphp</h2>
@@ -29,9 +29,31 @@
                     </div>
                  <p>   @php echo $normal->long_content; @endphp </p>
                 </div>
+                
+            </section> --}}
+            <section class="message-area ptb--60">
+                <div class="container">
+                    <div class="heading mb--22">
+                        <h2>@php echo $normal->caption; @endphp</h2>
+                        <hr class="delimeter">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            
+                            <h3>@php echo $normal->short_content; @endphp</h3>
+                            <p> @php echo $normal->long_content; @endphp </p>
+                        </div>
+                        <div class="col-md-5 col-sm-6">
+                            <img src="@php echo $normal->banner_image; @endphp">
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- About Area End -->
         </main>
         <!-- Main Content Wrapper End -->
 
+
+
+        
         @endsection
