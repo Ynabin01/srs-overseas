@@ -9,8 +9,10 @@
                     <h1 class="page-title">Gallery</h1>
                     <ul class="breadcrumb">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/galleryfolder">Our Meeting</a></li>
-                        <li class="current"><span>Gallery</span></li>
+                        <li><a href="/photo-gallery">{{$slug1->caption ?? $slug1 }}</a></li>
+                        @if(isset($slug2))
+                        <li class="current"><span>{{$slug2->caption ?? $slug2 }}</span></li>
+                        @endif
                     </ul>
                 </div>
             </div>

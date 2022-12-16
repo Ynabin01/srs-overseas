@@ -13,11 +13,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="page-title">Security Guard – UAE Job Demand </h1>
+                    <h1 class="page-title">{{$slug1}} </h1>
                     <ul class="breadcrumb">
                         <li><a href="/">Home</a></li>
                         <li><a href="/job-list">Job</a></li>
-                        <li class="current"><span>Security Guard – UAE Job Demand </span></li>
+                        @if(isset($slug2))
+                        <li class="current"><span>{{$slug2}} </span></li>
+                        @endif
                     </ul>
                 </div>
             </div>
