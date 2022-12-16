@@ -228,10 +228,10 @@
                                 <h3 class="widget-title mb--20 mb-sm--20">About Us</h3>
                                 <div class="footer-widget">
                                     <ul class="footer-menu">
-                                        <li><a href="/inner">About Company</a></li>
-                                        <li><a href="/legaldocument">Legal Documents</a></li>
-                                        <li><a href="#">Organization Chart</a></li>
-                                        <li><a href="/termscondition">Terms & Condition</a></li>
+                                        <li><a href="/about-one">About Company</a></li>
+                                        <li><a href="/legal-document">Legal Documents</a></li>
+                                        <li><a href="/organization-chart">Organization Chart</a></li>
+                                        <li><a href="/terms-and-conditions">Terms & Condition</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -243,7 +243,7 @@
                                     <ul class="footer-menu">
                                         <li><a href="/job-list">Job</a></li>
                                         <li><a href="#">Service</a></li>
-                                        <li><a href="/galleryfolder">Gallery</a></li>
+                                        {{-- <li><a href="/photogallery">Gallery</a></li> --}}
                                         <li><a href="/contact">Contact Us</a></li>
                                     </ul>
                                 </div>
