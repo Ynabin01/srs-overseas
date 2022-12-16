@@ -26,11 +26,11 @@
                                         <div class="blog__media">
                                             <figure class="image">
                                                 <img src="{{ $cat->banner_image }}" alt="Job" class="w-100">
-                                                <a href="joblist" class="item-overlay"></a>
+                                                <a href="{{ route('JobList', $cat->nav_name) }}" class="item-overlay"></a>
                                             </figure>
                                         </div>
                                         <div class="blog__info">
-                                            <h3 class="blog__title"><a href="joblist">{{ $cat->caption }}</a>
+                                            <h3 class="blog__title"><a href="{{ route('JobList', $cat->nav_name) }}">{{ $cat->caption }}</a>
                                             </h3>
                                         </div>
                                     </div>
