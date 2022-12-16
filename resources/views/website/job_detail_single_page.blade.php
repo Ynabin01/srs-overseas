@@ -120,7 +120,7 @@
                                     <h3>Latest Jobs</h3>
                                     <div class="job-box">
                                         <div class="job__inner">
-                                            <a href="#" class="job-overlay"></a>
+                                            <a href="{{ route('single_job', $all_jobsitem->nav_name) }}" class="job-overlay"></a>
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <figure class="job__icon">
@@ -135,7 +135,7 @@
                                                             <p>({{ $all_jobsitem->getJob->company_name }})</p>
                                                         </div>
                                                         <div class="job-footer">
-                                                            <a href="/job_detail_single_page"  class="btn btn-shape-round">View &amp;
+                                                            <a href="{{ route('single_job', $all_jobsitem->nav_name) }}"  class="btn btn-shape-round">View &amp;
                                                                 Apply</a>
                                                         </div>
                                                     </div>

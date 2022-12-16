@@ -411,12 +411,14 @@ class HomeController extends Controller
         else{
             $slug1 = "Jobdetails";
         }
-       
+ 
         $slug2 = $job->caption;
         $global_setting = GlobalSetting::all()->first(); 
         $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
-        return view("website.job_detail_single_page")->with(['job'=>$job,'menus'=>$menus,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
+        return view("website.job_detail_single_page")->with(['jobdetail'=>$job,'job'=>$job,'menus'=>$menus,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
+    
     }
+
     public function ReadMore($slug){
         $normal = Navigation::where('id',$slug)->first();
         //return $normal;
