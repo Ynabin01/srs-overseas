@@ -416,6 +416,19 @@
         });
     </script>
 
+ <!-- gllery js -->
+ <script src="/website/assets/js/gallery/picturefill.min.js"></script>
+ <script src="/website/assets/js/gallery/lightgallery.js"></script>
+ <script src="/website/assets/js/gallery/lg-pager.js"></script>
+ <script src="/website/assets/js/gallery/lg-autoplay.js"></script>
+ <script src="/website/assets/js/gallery/lg-fullscreen.js"></script>
+ <script src="/website/assets/js/gallery/lg-zoom.js"></script>
+ <script src="/website/assets/js/gallery/lg-hash.js"></script>
+ <script src="/website/assets/js/gallery/lg-share.js"></script>
+
+ <script type="text/javascript">lightGallery(document.getElementById('lightgallery'));</script>
+
+
 </body>
 
 </html>
