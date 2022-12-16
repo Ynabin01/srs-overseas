@@ -241,8 +241,8 @@
                                 <h3 class="widget-title mb--20 mb-sm--20">Useful Links</h3>
                                 <div class="footer-widget">
                                     <ul class="footer-menu">
-                                        <li><a href="/job-list">Job</a></li>
-                                        <li><a href="#">Service</a></li>
+                                        <li><a href="/job">Job</a></li>
+                                        <li><a href="/photo-gallery">Gallery</a></li>
                                         {{-- <li><a href="/photogallery">Gallery</a></li> --}}
                                         <li><a href="/contact">Contact Us</a></li>
                                     </ul>
