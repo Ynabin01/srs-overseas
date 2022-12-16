@@ -115,7 +115,7 @@
                                                 @foreach ($menus as $menu)
                                                     <li class="mainmenu__item menu-item-has-children">
 
-                                                        @if ($menu->nav_name == 'aboutus')
+                                                        @if ($menu->nav_name == 'aboutus' || $menu->nav_name == 'gallery')
                                                             <a href="#"
                                                                 class="mainmenu__link">{{ $menu->caption }}</a>
                                                         @else
