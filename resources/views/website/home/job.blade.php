@@ -52,6 +52,6 @@
             @endif
         </div>
     </div>
-    <a style="display: flex" href="/jobs" class="btn">View All</a>
+    <a style="display: flex" href="/job" class="btn">View All</a>
 
 </section>
