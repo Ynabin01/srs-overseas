@@ -114,8 +114,8 @@
                                             <nav class="main-navigation text-center d-none d-lg-block">
                                                 @foreach ($menus as $menu)
                                                     <li class="mainmenu__item menu-item-has-children">
-                                                        {{-- @if ($menu->nav_name == 'aboutus' || $menu->nav_name == 'jobs'(for nabin understand)) --}} 
-                                                        @if ($menu->nav_name == 'aboutus' )
+
+                                                        @if ($menu->nav_name == 'aboutus')
                                                             <a href="#"
                                                                 class="mainmenu__link">{{ $menu->caption }}</a>
                                                         @else
@@ -287,6 +287,55 @@
         </footer>
         <!-- Footer End-->
 
+        <!-- OffCanvas Menu Start -->
+        <div class="offcanvas-menu-wrapper" id="offcanvasMenu">
+            <div class="offcanvas-menu-inner">
+                <a href="" class="btn-close">
+                    <img src="/uploads/icons/{{ $global_setting->site_logo }}" alt="Cross">
+                </a>
+                <nav class="offcanvas-navigation">
+                    @foreach ($menus as $menu)
+                        <ul class="offcanvas-menu">
+                            <li class="menu-item-has-children">
+                                 {{-- @if ($menu->nav_name == 'aboutus' || $menu->nav_name == 'jobs'(for nabin understand)) --}} 
+                                @if ($menu->nav_name == 'aboutus' || $menu->nav_name == 'gallery')
+                                    <a href="#" class="mm-text">{{ $menu->caption }}</a>
+                                @else
+                                    <a href="/{{ $menu->nav_name }}" class="menu-item-has-children">
+                                        <span data-hover="About Us" class="mm-text">{{ $menu->caption }}</span>
+                                    </a>
+                                @endif
+                                @if ($menu->childs->count() > 0)   
+                                    <ul class="sub-menu">
+                                        @foreach ($menu->childs as $submenu) 
+                                            <li> 
+                                                <a href="/{{ $menu->nav_name }}/{{ $submenu->nav_name }}">
+                                                    <span data-hover="About Us"
+                                                        class="mm-text">{{ $submenu->caption }}</span>
+                                                </a> 
+                                            </li> 
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        </ul>
+                       
+                    @endforeach
+                    
+                    <a style="font-size: 15px" href="/contact">
+                        <span class="mm-text">Contact Us</span>
+                    </a>
+                  
+                    
+                    <div class="site-info vertical">
+                        <div class="site-info__item">
+                            <a href="tel:{{ $global_setting->phone }}"><strong>{{ $global_setting->phone }}</strong></a>
+                            <a href="mailto:{{ $global_setting->site_email }}">{{ $global_setting->site_email }}</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
         <!-- OffCanvas Menu End -->
 
         <!-- Global Overlay Start -->
@@ -296,6 +345,17 @@
         <!-- Global Overlay Start -->
         <a class="scroll-to-top" href=""><i class="fa fa-angle-up"></i></a>
         <!-- Global Overlay End -->
+    </div>
+    <!-- Main Wrapper End -->
+
+
+    <!-- Global Overlay Start -->
+    <div class="global-overlay"></div>
+    <!-- Global Overlay End -->
+
+    <!-- Global Overlay Start -->
+    <a class="scroll-to-top" href=""><i class="fa fa-angle-up"></i></a>
+    <!-- Global Overlay End -->
     </div>
     <!-- Main Wrapper End -->
 
