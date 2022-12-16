@@ -112,12 +112,13 @@
                    
                        
                         <div class="col-sm-4">
+                            <h3>Latest Jobs</h3>
                               {{-- @dd($all_jobs) --}}
                             @foreach ($all_jobs as $all_jobsitem)
                              {{-- @dd($all_jobsitem) --}}
+                           
                             <div class="side-bar">
-                                <div class="heading mt--22 mb--22">
-                                    <h3>Latest Jobs</h3>
+                                <div class="heading mt--22 mb--22"> 
                                     <div class="job-box">
                                         <div class="job__inner">
                                             <a href="{{ route('single_job', $all_jobsitem->nav_name) }}" class="job-overlay"></a>
