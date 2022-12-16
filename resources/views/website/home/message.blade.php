@@ -9,7 +9,7 @@
                     <h1 class="mb--18">{{ $message->caption }}</h1>
                     <hr class="delimeter mb--22">
                 </div>
-                <p class="mb--15"> {{ $message->short_content }} <a href="message-from-chairman.html" class="read-more-text">Read More +</a>
+                <p class="mb--15"> {{ $message->short_content }} <a href="/message-from-chairman" class="read-more-text">Read More +</a>
                 </p>
                 <h3> {{ $message->long_content }}</h3>
                 
