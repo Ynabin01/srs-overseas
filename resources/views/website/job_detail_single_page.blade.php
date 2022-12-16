@@ -135,7 +135,7 @@
                                                             <p>({{ $all_jobsitem->getJob->company_name }})</p>
                                                         </div>
                                                         <div class="job-footer">
-                                                            <a href="{{ route('single_job', $all_jobsitem->nav_name) }}"  class="btn btn-shape-round">View &amp;
+                                                            <a href="/job_detail_single_page"  class="btn btn-shape-round">View &amp;
                                                                 Apply</a>
                                                         </div>
                                                     </div>
