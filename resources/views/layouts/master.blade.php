@@ -230,7 +230,7 @@
                                     <ul class="footer-menu">
                                         <li><a href="/about-one">About Company</a></li>
                                         <li><a href="/legal-document">Legal Documents</a></li>
-                                        <li><a href="/organization-chart">Organization Chart</a></li>
+                                        <li><a href="/required-documents">Required Documents</a></li>
                                         <li><a href="/terms-and-conditions">Terms & Condition</a></li>
                                     </ul>
                                 </div>
