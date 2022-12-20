@@ -26,7 +26,6 @@
             <section class="about-area ptb--60">
                 <div class="container">
                     <div class="row">
-                       
                         <div class="col-md-6">
                             <div class="heading mb--22">
                                 <h2>@php echo $normal->short_content; @endphp</h2>
@@ -38,9 +37,7 @@
                             <img src="{{ $normal->banner_image }}" alt="">
                         </div>
                     </div>
-
                 </div>
-
             </section>
             <!-- About Area End -->
         </main>
@@ -58,7 +55,7 @@
                             <p> @php echo $normal->long_content; @endphp </p>
                         </div>
                     </div>
-                   
+
                 </div>
 
             </section>

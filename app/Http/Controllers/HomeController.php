@@ -240,7 +240,8 @@ class HomeController extends Controller
     }
 
   public function subcategory($slug1,$submenu){
-        // return "subcategory::".$submenu;
+        
+    // return "subcategory::".$submenu;
         $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
         //return $menus->first()->submenus;
         $jobs = Navigation::query()->where('page_type','Job')->latest()->get();
@@ -381,7 +382,7 @@ class HomeController extends Controller
             // return $normal;
             return view("website.messagechairman")->with(['message'=>$message,'normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
-
+    
        
         elseif($subcategory_type == "Group"){
             //return "return to job else";
