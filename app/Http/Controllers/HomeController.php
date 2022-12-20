@@ -316,8 +316,8 @@ class HomeController extends Controller
                 $subcategory_type = Navigation::all()->where('nav_name',$submenu)->first()->page_type;//slug/slug2(group)
              }
             else{
-                
-                //return Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal')->first()->page_type;
+               
+                #return Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal');
                 if(Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal')->count()>0){
                     $subcategory_type = Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal')->first()->page_type;//slug/slug2(except group)
                 }
@@ -328,6 +328,9 @@ class HomeController extends Controller
                 else if(Navigation::all()->where('nav_name',$submenu)->where('page_type','Video Gallery')->count()>0){
                     $subcategory_type = Navigation::all()->where('nav_name',$submenu)->where('page_type','Video Gallery')->first()->page_type;//slug/slug2(except group)
                 }
+                else if(Navigation::all()->where('nav_name',$submenu)->where('page_type','Chart')->count()>0){
+                    $subcategory_type = Navigation::all()->where('nav_name',$submenu)->where('page_type','Chart')->first()->page_type;//slug/slug2(except group)
+                }
                 else{
                     
                     
@@ -336,7 +339,7 @@ class HomeController extends Controller
                         
                         return view("website.job-list")->with(['jobs'=>Job::all(),'slug1'=>$slug1,'slug2'=>$slug2]);
                     }
-              
+                    return "Sad";
                     return redirect('/');//submenu is page_type=Group and its internal items are empty
                 }
             }
@@ -364,6 +367,7 @@ class HomeController extends Controller
             //return "return to view job";
             return view("website.job-list")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
+        
         elseif($subcategory_type == "Notice"){
             // return "return to view Notice";
             $notices = Navigation::query()->where('parent_page_id',$subcategory_id)->where('page_type','Notice')->latest()->get();
@@ -372,7 +376,7 @@ class HomeController extends Controller
             return view("website.notice")->with(['notice_heading'=>$notice_heading,'notices'=>$notices,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
         elseif($subcategory_type == "Normal"){
-                
+             
             $normal = Navigation::find($subcategory_id);
             return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
@@ -383,7 +387,13 @@ class HomeController extends Controller
             return view("website.messagechairman")->with(['message'=>$message,'normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
     
-       
+        elseif($subcategory_type == "Chart"){
+            
+            $chart = Navigation::find($subcategory_id);
+            // return $normal;
+            return view("website.chart")->with(['chart'=>$chart,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
+        }
+    
         elseif($subcategory_type == "Group"){
             //return "return to job else";
             return view("website.job-list")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
