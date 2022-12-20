@@ -27,7 +27,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                           <img src="{{ $chart->banner_image }}" alt="">
+                           <img src="{{ $chart->banner_image }}" alt="" style="width:100%;">
                            
                         </div>
                     </div>
